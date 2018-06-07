@@ -1,5 +1,8 @@
-<form>
-  <input class="form-group" type="text" placeholder="Username" name="quotation">
+<form ng-submit="onsubmit()">
+  <input class="form-group" type="text" [(ng-model)]="users.name" placeholder="Username" name="quotation">
   <button id="search1" class="btn" type="submit" value="search">search</button>
   </form>
-  {{users}}
+  <div>
+  {{users.login}}
+  </div>
+

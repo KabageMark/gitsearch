@@ -9,11 +9,11 @@ import {HTTPService} from '../http.service';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-  users:any[10];
+  users:any[];
   constructor(public httpservice:HTTPService) { 
     this.httpservice.getusers().subscribe(users =>{
       this.users = users;
-      console.log(users)
+      console.log(users);
     })
    }
 

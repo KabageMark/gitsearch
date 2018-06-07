@@ -2,13 +2,16 @@ import { Injectable } from '@angular/core';
 import { HttpModule, Http } from '@angular/http';
 import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
+import {environment} from '../environments/environment'
 
 @Injectable({
   providedIn: 'root'
 })
 export class HTTPService {
+  private apiUrl: string = environment.apiurl
 
-  constructor(private http:Http) { 
+  constructor(private http:Http) {
+    console.log('service is okay') 
     
   }
 
