@@ -20,4 +20,9 @@ export class HTTPService {
          .pipe(map(res => res.json()));
     
   }
+  getrepos(){
+    return this.http.get('https://api.github.com/users/daneden/repos?access_token=6f3e047a5b170c15b2bbd99e08b54af9e3709d33')
+         .pipe(map(res => res.json()));
+    
+  }
 }
