@@ -9,9 +9,11 @@ import {environment} from '../environments/environment'
 })
 export class HTTPService {
   private apiUrl: string = environment.apiurl
+  private username : any 
 
   constructor(private http:Http) {
-    console.log('service is okay') 
+    console.log('service is okay')
+    this.username = 'Daneden' 
     
   }
 
@@ -24,5 +26,10 @@ export class HTTPService {
     return this.http.get('https://api.github.com/users/daneden/repos?access_token=6f3e047a5b170c15b2bbd99e08b54af9e3709d33')
          .pipe(map(res => res.json()));
     
+  }
+
+  updateprofile(username:any){
+    this.username = username
+
   }
 }

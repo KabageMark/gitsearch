@@ -3,7 +3,7 @@ import{Users} from '../users';
 import {HTTPService} from '../http.service';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Repositories } from '../repositories';
-// import{Dataservice} from '../http.service'
+// import{Dataservice} from '../http.service';
 
 @Component({
   selector: 'app-search',
@@ -13,6 +13,7 @@ import { Repositories } from '../repositories';
 export class SearchComponent implements OnInit {
   users:any[];
   repositories:any[];
+  username:any[];
 
   constructor(public httpservice:HTTPService) { 
     this.httpservice.getusers().subscribe(users =>{
@@ -23,12 +24,10 @@ export class SearchComponent implements OnInit {
       this.repositories = repositories;
       console.log(repositories);
     })
-    // onsubmit(
       
-    // )
-      // this.httpservice.getusers().subscribe(users => {
-      //   this.users.unshift(users)
-      // });
+    }
+    searchprofile(){
+      this.httpservice.updateprofile(this.username)
     }
    
 
