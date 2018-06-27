@@ -17,9 +17,9 @@ import { SearchComponent } from './search/search.component';
   imports: [
     BrowserModule,
     HttpModule,
-    NgModule 
+    FormsModule 
   ],
   providers: [HTTPService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

@@ -9,7 +9,7 @@ import {environment} from '../environments/environment'
 })
 export class HTTPService {
   private apiUrl: string = environment.apiurl
-  private username : any 
+  public  username : any 
 
   constructor(private http:Http) {
     console.log('service is okay')
