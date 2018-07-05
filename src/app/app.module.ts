@@ -5,7 +5,7 @@ import {FormsModule} from '@angular/forms';
 
 import {HTTPService} from './http.service';
 import { AppComponent } from './app.component';
-import { SearchComponent } from './search/search.component';
+import { SearchComponent } from './search/search.component'
 
 
 @NgModule({

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable ,Input} from '@angular/core';
 import { HttpModule, Http } from '@angular/http';
 import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -8,27 +8,28 @@ import {environment} from '../environments/environment'
   providedIn: 'root'
 })
 export class HTTPService {
-  private apiUrl: string = environment.apiurl
-  public  username : any 
+  private  username :string;
+  private clientid ='cf5db35af0bb82599134';
+  private clientsecret='f8126beabd055177a23ad2bd939d5a886d10b790';
 
   constructor(private http:Http) {
-    console.log('service is okay')
-    this.username = 'Daneden' 
+    console.log('service is okay');
+    this.username = 'Daneden';
     
   }
 
   getusers(){
-    return this.http.get('https://api.github.com/users/daneden?access_token=6f3e047a5b170c15b2bbd99e08b54af9e3709d33')
+    return this.http.get('https://api.github.com/users' + this.username +"?client_id=" + this.clientid + "&client_secret="+ this.clientsecret)
          .pipe(map(res => res.json()));
     
   }
   getrepos(){
-    return this.http.get('https://api.github.com/users/daneden/repos?access_token=6f3e047a5b170c15b2bbd99e08b54af9e3709d33')
+    return this.http.get('https://api.github.com/users/repos')
          .pipe(map(res => res.json()));
     
   }
 
-  updateprofile(username:any){
+  updateprofile(username:string){
     this.username = username
 
   }
