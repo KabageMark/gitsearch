@@ -30,12 +30,15 @@ export class SearchComponent implements OnInit {
         console.log(profile);
         this.profile = profile;
       });
-      
+      this.httpservice.getrepos().subscribe(repos =>{
+        console.log(repos);
+        this.repos = repos;
+      })
     }
-    searchprofile(){
-      this.httpservice.updateprofile(this.profile)
-      console.log(this.profile)
-    }
+    // searchprofile(){
+    //   this.httpservice.updateprofile(this.profile)
+    //   console.log(this.profile)
+    // }
    
 
   ngOnInit() {

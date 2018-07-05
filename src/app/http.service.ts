@@ -19,18 +19,16 @@ export class HTTPService {
   }
 
   getusers(){
-    return this.http.get('https://api.github.com/users' + this.username +"?client_id=" + this.clientid + "&client_secret="+ this.clientsecret)
-         .pipe(map(res => res.json()));
-    
+    return this.http.get(" https://api.github.com/users/" + this.username + "?client_id=" + this.clientid + "&client_secret=" +this.clientsecret)
+    .pipe(map(res =>res.json()));
   }
   getrepos(){
-    return this.http.get('https://api.github.com/users/repos')
-         .pipe(map(res => res.json()));
-    
-  }
+    return this.http.get(" https://api.github.com/users/" + this.username + "/repos?client_id=" + this.clientid + "&client_secret=" +this.clientsecret)
+    .pipe(map(res =>res.json()));
 
+  }
   updateprofile(username:string){
-    this.username = username
+    this.username = username;
 
   }
 }
